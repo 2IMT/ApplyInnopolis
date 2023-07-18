@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/assistant.css">
+    <title>Tests</title>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img class="img_innopolis" src="assets/img/innopolis-university-logo.png">
+        </div>
+        <div id="enrollment-status">
+            Application status: <div>Enrolled on partial scholarship</div>
+        </div>
+        <div id="login">
+            <div class="login-text" id="login-text">
+                <div id="name_id">
+                    Artem Burmyakov
+                    <br>
+                    <span class="font-middle">ID:141141</span>
+                </div>
+                <div class="log_out" id="log_out">Log out</div>
+            </div>
+            <div class="exit_button" id="exit_button">
+                <div id="x-ray"></div>
+                <img id="button_exit_green" src="assets/img/exit-button.svg">
+                <svg id="button_exit_red" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="exit_button"
+                        d="M39.8638 32.7813H37.043C36.8228 32.7813 36.6393 32.9635 36.6393 33.1823V36.401H3.62303V3.59896H36.6445V6.81771C36.6445 7.03646 36.828 7.21875 37.0482 7.21875H39.8691C40.0893 7.21875 40.2728 7.04167 40.2728 6.81771V1.59896C40.2728 0.713541 39.5545 0 38.6631 0H1.60965C0.718314 0 0 0.713541 0 1.59896V38.401C0 39.2865 0.718314 40 1.60965 40H38.6579C39.5492 40 40.2676 39.2865 40.2676 38.401V33.1823C40.2676 32.9583 40.084 32.7813 39.8638 32.7813ZM40.8391 19.6719L33.399 13.8385C33.1211 13.6198 32.7174 13.8177 32.7174 14.1667V18.125H16.2538C16.0231 18.125 15.8344 18.3125 15.8344 18.5417V21.4583C15.8344 21.6875 16.0231 21.875 16.2538 21.875H32.7174V25.8333C32.7174 26.1823 33.1264 26.3802 33.399 26.1615L40.8391 20.3281C40.8892 20.2891 40.9297 20.2393 40.9576 20.1825C40.9855 20.1256 41 20.0632 41 20C41 19.9368 40.9855 19.8744 40.9576 19.8175C40.9297 19.7606 40.8892 19.7109 40.8391 19.6719Z"
+                        fill="#E64622" />
+                </svg>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="menu">
+            <section class="main_box">
+                <ul class="box_menu">
+                    <li class="tests">
+                        <a id="tests" class="active" href="#">TESTS</a>
+                    </li>
+                    <li class="app">
+                        <a id="app" href="#">APPLICATION</a>
+                    </li>
+                    <li class="admin_doc">
+                        <a id="admin_doc" href="#">ADMISSION DOCUMENTS</a>
+                    </li>
+                    <li class="settings">
+                        <a id="settings" href="#">SETTINGS</a>
+                    </li>
+                </ul>
+            </section>
+            <div class="card" style="text-align: center;">
+                <div class="heading">
+                    NOTIFICATIONS:
+                </div>
+                <div class="cont_box" id="cont_box">
+                    <div class="butt-plug" id="plug">You don't have any notifications yet</div>
+                    <div class="box_container" id="box_container"></div>
+                </div>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="heading">
+                    +7 (843) 203-92-53 ext. 183
+                    <div class="fg" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr;">
+                        <div style="text-align: left;">
+                            FAQ
+                        </div>
+                        <div style="text-align: right;">
+                            Guidelines
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 100px;">
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+                <div class="card">
+                    <div class="heading">This is</div>
+                    <div class="sep"></div>
+                    <div class="body">Various information could be displayed with help of those cards</div>
+                </div>
+                <div class="card">
+                    <div class="heading">An example of some</div>
+                    <div class="sep"></div>
+                    <div class="body">For example it could be basic info about user profile</div>
+                </div>
+                <div class="card">
+                    <div class="heading">Info cards</div>
+                    <div class="sep"></div>
+                    <div class="body">Or maybe just some tips for user</div>
+                </div>
+            </div>
+            <form action="#" class="card">
+                <div class="heading">
+                    Form example
+                </div>
+                <div class="sep"></div>
+                <div class="body">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="email" placeholder="a.example@innopolis.university">
+                        </div>
+                        <div>
+                            <label for="number">Some number:</label>
+                            <input type="number" id="number" name="number" placeholder="Enter some number here">
+                        </div>
+                    </div>
+                    <label for="text">Textarea:</label>
+                    <textarea name="text" id="text" cols="30" rows="10">Enter your text</textarea>
+                    <div style="text-align: right;">
+                        <input type="submit" value="submit" class="submit" style="width: fit-content;">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script async="true" src="js/exit.js"></script>
+</body>
+
+</html>
