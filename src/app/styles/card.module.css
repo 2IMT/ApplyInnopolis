@@ -1,0 +1,34 @@
+.card {
+    margin-right: 10px;
+    padding: 20px;
+    border-radius: 7px;
+    background: #FFF;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.10);
+    margin-bottom: 20px;
+}
+
+.card .heading {
+    font-size: 16pt;
+    font-weight: 700;
+}
+
+.card .body {
+    font-size: 14pt;
+    font-weight: 500;
+}
+
+.sep {
+    border-bottom: #40BA21 2px solid;
+    width: 98%;
+    margin: 10px auto;
+  }
+
+@media screen and (max-width: 1023px) {
+    .card .heading {
+        font-size: 14pt;
+    }
+
+    .card .body {
+        font-size: 12pt;
+    }
+}
