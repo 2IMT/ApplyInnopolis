@@ -1,7 +1,7 @@
 'use client';
 
-import './globals.css'
-import styles from './page.module.css'
+import '../globals.css'
+import styles from '../styles/exit.module.css'
 import Image from 'next/image'
 
 function exit() {
