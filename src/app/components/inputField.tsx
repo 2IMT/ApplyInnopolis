@@ -10,7 +10,7 @@ export default function InputField({labelName, inputName = " ", inputPlaceholder
     return (
         <div className={styles.inputField}>
             <label>{labelName}</label>
-            <input value="" type={inputType} name={inputName} placeholder={inputPlaceholder} />
+            <input type={inputType} name={inputName} placeholder={inputPlaceholder} />
         </div>
     )
 }
