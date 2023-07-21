@@ -1,9 +1,13 @@
+'use client';
+
 import '../globals.css'
 import styles from '../styles/menu.module.css'
 import headerStyles from '../styles/header.module.css'
 import exitStyles from '../styles/exit.module.css'
 import pageStyles from '../styles/page.module.css'
 import Card from './card'
+import React from 'react'
+import {usePathname} from 'next/navigation';
 
 function MenuItem({ isActive, name, link }: {
     isActive: boolean,
@@ -18,6 +22,7 @@ function MenuItem({ isActive, name, link }: {
 }
 
 export default function Menu() {
+    const pathname = usePathname();
     return (
         <div id={styles.menu}>
             <div id={styles.user_data}>
@@ -31,13 +36,13 @@ export default function Menu() {
             </div>
             <section className={styles.main_box}>
                 <ul className={styles.box_menu}>
-                    <MenuItem isActive={true} name="TESTS" link="/"/>
+                    <MenuItem isActive={pathname === "/" ? true : false} name="TESTS" link="/"/>
 
-                    <MenuItem isActive={false} name="APPLICATION" link="/application"/>
+                    <MenuItem isActive={pathname === "/application" ? true : false} name="APPLICATION" link="/application"/>
 
-                    <MenuItem isActive={false} name="ADMISSION DOCUMENTS" link="/admission-documents"/>
+                    <MenuItem isActive={pathname === "/admission-documents" ? true : false} name="ADMISSION DOCUMENTS" link="/admission-documents"/>
 
-                    <MenuItem isActive={false} name="SETTINGS" link="/settings"/>
+                    <MenuItem isActive={pathname === "/settings" ? true : false} name="SETTINGS" link="/settings"/>
                 </ul>
             </section>
             <Card centred={true} sep={false} heading="NOTIFICATIONS:" body={
