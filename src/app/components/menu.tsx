@@ -1,15 +1,32 @@
+'use client';
+
 import '../globals.css'
 import styles from '../styles/menu.module.css'
 import headerStyles from '../styles/header.module.css'
 import exitStyles from '../styles/exit.module.css'
 import pageStyles from '../styles/page.module.css'
 import Card from './card'
+import React from 'react'
+import {usePathname} from 'next/navigation';
+
+function MenuItem({ isActive, name, link }: {
+    isActive: boolean,
+    name: string,
+    link: string
+}) {
+    return (
+        <li className={styles.tests}>
+            <a id={styles.test} className={isActive ? styles.active : ""} href={link}>{name}</a>
+        </li>
+    )
+}
 
 export default function Menu() {
+    const pathname = usePathname();
     return (
         <div id={styles.menu}>
             <div id={styles.user_data}>
-                <div style={{fontSize: "17px", fontWeight: "700", textAlign: "center"}}>
+                <div style={{ fontSize: "17px", fontWeight: "700", textAlign: "center" }}>
                     Artem Burmyakov <span className={pageStyles.font_middle}>ID:141141</span>
                 </div>
                 <br />
@@ -19,18 +36,13 @@ export default function Menu() {
             </div>
             <section className={styles.main_box}>
                 <ul className={styles.box_menu}>
-                    <li className={styles.tests}>
-                        <a id={styles.test} className={styles.active} href="#">TESTS</a>
-                    </li>
-                    <li className={styles.app}>
-                        <a id={styles.app} href="#">APPLICATION</a>
-                    </li>
-                    <li className={styles.admin_doc}>
-                        <a id={styles.admin_doc} href="#">ADMISSION DOCUMENTS</a>
-                    </li>
-                    <li className={styles.settings}>
-                        <a id={styles.settings} href="#">SETTINGS</a>
-                    </li>
+                    <MenuItem isActive={pathname === "/" ? true : false} name="TESTS" link="/"/>
+
+                    <MenuItem isActive={pathname === "/application" ? true : false} name="APPLICATION" link="/application"/>
+
+                    <MenuItem isActive={pathname === "/admission-documents" ? true : false} name="ADMISSION DOCUMENTS" link="/admission-documents"/>
+
+                    <MenuItem isActive={pathname === "/settings" ? true : false} name="SETTINGS" link="/settings"/>
                 </ul>
             </section>
             <Card centred={true} sep={false} heading="NOTIFICATIONS:" body={
