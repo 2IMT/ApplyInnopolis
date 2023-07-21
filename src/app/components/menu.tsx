@@ -23,7 +23,7 @@ export default function Menu() {
                         <a id={styles.test} className={styles.active} href="#">TESTS</a>
                     </li>
                     <li className={styles.app}>
-                        <a id={styles.app} href="#">APPLICATION</a>
+                        <a id={styles.app} href="/application">APPLICATION</a>
                     </li>
                     <li className={styles.admin_doc}>
                         <a id={styles.admin_doc} href="#">ADMISSION DOCUMENTS</a>
