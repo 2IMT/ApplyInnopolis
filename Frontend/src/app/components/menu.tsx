@@ -47,7 +47,7 @@ export default function Menu() {
             </section>
             <Card centred={true} sep={false} heading="NOTIFICATIONS:" body={
                 <div className={styles.count_box} id={styles.count_box}>
-                    <div className={styles.plug} id={styles.plug}>You don't have any notifications yet</div>
+                    <div className={styles.plug} id={styles.plug}>You don&apos;t have any notifications yet</div>
                     <div className={styles.box_container} id={styles.box_container}></div>
                 </div>
             } />
