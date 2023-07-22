@@ -1,9 +1,0 @@
-.grid {
-    display: grid;
-}
-
-@media screen and (max-width: 750px) {
-    .grid {
-        display: block;
-    }
-}
