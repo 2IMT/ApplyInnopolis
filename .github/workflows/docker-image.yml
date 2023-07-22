@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: docker compose CD
 
 on:
   push:
@@ -7,12 +7,20 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
-    runs-on: arch-latest
+    runs-on: linux
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker-compose build & docker-compose up
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd ~/var/www/FWDProject
+          git pull
+          docker-compose down
+          docker-compose build
+          docker-compose up
