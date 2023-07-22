@@ -12,13 +12,9 @@ services:
       - "5432:5432"
   frontend:
       build: ./Frontend
-      ports:
-        - 3000:3000
       network_mode: host
   backend:
       build: ./Backend
-      ports:
-        - 5000:5000
       network_mode: host
 
 volumes:
