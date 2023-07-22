@@ -19,7 +19,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-          cd ~/var/www/FWDProject
+          cd /var/www/FWDProject
           git pull
           docker-compose down
           docker-compose build
