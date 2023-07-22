@@ -4,3 +4,17 @@ services:
         ports:
           - 3000:3000
         network_mode: host
+    postgres:
+      image: postgres:15.3
+      environment:
+        POSTGRES_DB: "ApplyInnopolis"
+        POSTGRES_USER: "applyinnopolisapi"
+        POSTGRES_PASSWORD: "e7Y8F0H9sa3cdvMcBGvW"
+        PGDATA: "/var/lib/postgresql/data/pgdata"
+      volumes:
+        - apply-innopolis-db-data:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
+
+volumes:
+  apply-innopolis-db-data:
