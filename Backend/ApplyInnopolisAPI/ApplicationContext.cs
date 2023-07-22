@@ -9,6 +9,7 @@ namespace ApplyInnopolisAPI.Models
             : base(options)
         {
             Database.EnsureCreated();
+            Database.Migrate();
         }
     }
 }

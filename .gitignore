@@ -37,3 +37,6 @@
 /Backend/ApplyInnopolisAPI/obj
 /Backend/ApplyInnopolisAPI/bin
 /Backend/.idea
+/Backend/out
+Backend/ApplyInnopolisAPI/obj/Debug/net7.0/ApplyInnopolisAPI.assets.cache
+Backend/ApplyInnopolisAPI/obj/Debug/net7.0/ApplyInnopolisAPI.GeneratedMSBuildEditorConfig.editorconfig

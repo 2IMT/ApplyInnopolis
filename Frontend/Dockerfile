@@ -1,8 +1,7 @@
-
-from node:latest
-workdir /WFDProject
-copy . ./
-run npm install
-run npm i bootstrap-icons
-expose 3000
-entrypoint npm run dev
+FROM node:latest
+WORKDIR /FWDProject
+COPY . ./
+RUN npm install
+RUN npm i bootstrap-icons
+EXPOSE 3000
+ENTRYPOINT npm run dev
