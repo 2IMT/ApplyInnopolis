@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "F+GD/Lz6tMpx7RDyk1kRqaG+/rohjHioCT3Ut66SXWwbgyp4m5bTc6InguR75x3qQgR2+gZ04v2MwsUjxqpjlA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kibertod\\dev\\FWDProject\\Backend\\ApplyInnopolisAPI\\ApplyInnopolisAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kibertod\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.7\\microsoft.aspnetcore.openapi.7.0.7.nupkg.sha512",
+    "C:\\Users\\kibertod\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\kibertod\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\kibertod\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\kibertod\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\kibertod\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\kibertod\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

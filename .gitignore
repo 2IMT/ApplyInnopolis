@@ -33,3 +33,7 @@
 # typescript
 /Frontend/*.tsbuildinfo
 /Frontend/next-env.d.ts
+
+/Backend/ApplyInnopolisAPI/obj
+/Backend/ApplyInnopolisAPI/bin
+/Backend/.idea
