@@ -6,7 +6,7 @@ public class TestModel
     
     public string Name { get; set; } = null!;
 
-    public int Time { get; set; }
+    public uint Time { get; set; }
     
-    public int Attempts { get; set; }
+    public uint Attempts { get; set; }
 }
