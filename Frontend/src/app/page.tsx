@@ -27,7 +27,6 @@ function fetchTests() {
   return fetch('https://cybertoad.ru/api/tests/getTests', {cache: "no-store"})
     .then(response => response.json())
     .then(response => {
-      console.log(response);
       return response as FetchedTests;
     })
 }
@@ -37,8 +36,6 @@ async function Tests()
   const tests = await fetchTests();
 
   tests.Tests.sort((a, b) => (a.Time - b.Time));
-
-  console.log(tests);
 
   let testsList: JSX.Element[] = [];
 
