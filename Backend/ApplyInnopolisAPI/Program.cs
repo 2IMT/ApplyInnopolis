@@ -26,13 +26,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider
-        .GetRequiredService<ApplicationContext>();
-    
-    // Here is the migration executed
-    dbContext.Database.Migrate();
-}
-
 app.Run();
