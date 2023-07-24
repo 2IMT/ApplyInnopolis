@@ -24,7 +24,12 @@ public class GetTest : Controller
         if (test == null)
             throw new Exception("Test with given id doesn't exist");
 
-        TestQuestionModel[] questions = mDb.TestQuestions.Where(q => q.Test == test).ToArray();
+        TestQuestionModel[] questions = mDb.TestQuestions.Where(q => q.Test.Id == test.Id).ToArray();
+
+        foreach (var question in questions)
+        {
+            question.Answer = "";
+        }
         
         return new ContentResult()
         {
