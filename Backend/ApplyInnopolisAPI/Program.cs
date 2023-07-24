@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+string connection =
+    "Host=127.0.0.1;Port=5432;Database=ApplyInnopolis;Username=applyinnopolisapi;Password=e7Y8F0H9sa3cdvMcBGvW";
 
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseNpgsql(connection));
 
