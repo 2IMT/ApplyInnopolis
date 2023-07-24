@@ -33,7 +33,7 @@ public class GetTest : Controller
         
         return new ContentResult()
         {
-            Content = JsonConvert.SerializeObject(new Result(){ Test = test }),
+            Content = JsonConvert.SerializeObject(new Result(){ Test = test, Questions = questions }),
             ContentType = "application/json"
         };
     }
