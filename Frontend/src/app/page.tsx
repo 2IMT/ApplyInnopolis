@@ -17,7 +17,7 @@ function Test(test: FetchedTest) {
     <Card heading={test.Name} body={<span>
       Time: {test.Time} min<br />
       Attempts: {test.Attempts}<br />
-      <Button text="START" inputType="button" />
+      <Button text="START" inputType="button" link={"/test?id=" + test.Id}/>
     </span>} />
   )
 }
