@@ -17,6 +17,8 @@ export default class InputField extends React.Component<InputFieldProps, {}> {
     inputPlaceholder: string;
     inputType: string;
 
+    value: string;
+
     constructor(props: InputFieldProps) {
         super(props);
         this.setState({ value: "" });
@@ -25,13 +27,23 @@ export default class InputField extends React.Component<InputFieldProps, {}> {
         this.inputName = props.inputName;
         this.inputPlaceholder = props.inputPlaceholder == null ? "" : props.inputPlaceholder;
         this.inputType = props.inputType == null ? "text" : props.inputType;
+
+        this.value = "";
+    }
+
+    setValue(value: string) {
+        this.value = value;
+    }
+
+    getValue() {
+        return this.value;
     }
 
     render() {
         return (
             <div className={styles.inputField}>
                 <label>{this.labelName}</label>
-                <input type={this.inputType} name={this.inputName} placeholder={this.inputPlaceholder} />
+                <input type={this.inputType} name={this.inputName} placeholder={this.inputPlaceholder} onChange={e => this.setValue(e.currentTarget.value)}/>
             </div>
         )
     }
