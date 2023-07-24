@@ -29,6 +29,7 @@ public class GetTest : Controller
         foreach (var question in questions)
         {
             question.Answer = "";
+            question.Test = null!;
         }
         
         return new ContentResult()
