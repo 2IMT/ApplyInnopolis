@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc;
 
 using ApplyInnopolisAPI.Models;
+using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace ApplyInnopolisAPI.Api;
@@ -29,6 +30,7 @@ public class GetUser : Controller
         
             string token = Request.Headers["Auth"]!;
         
+            IdentityModelEventSource.ShowPII = true;
             var tokenHandler = new JwtSecurityTokenHandler();
             try
             {
