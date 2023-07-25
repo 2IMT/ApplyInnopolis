@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { redirect } from 'next/navigation';
 
 function exit() {
-  redirect("/logout")
+  window.location.href = '/logout';
 }
 
 export default function Exit({username, userId}:{
