@@ -1,15 +1,12 @@
-'use client';
-
 import styles from '../styles/reg_auth_form.module.css'
 import alertStyles from '../styles/alert.module.css'
 
 import Card from '../components/card'
 import Button from '../components/button'
-import Grid from '../components/grid'
 import InputField from '../components/inputField'
 import Alert from '../components/alert'
-import { setCookie, getCookie} from '../cookies-utils';
-import RootLayout from '../layout';
+import { redirect } from 'next/navigation'
+import { cookies } from 'next/headers'
 
 interface FormElements extends HTMLFormControlsCollection {
     Login: HTMLInputElement;
@@ -20,17 +17,6 @@ type AuthenticationResponse = {
     Successful: boolean;
     Token?: string;
     Error?: string;
-}
-
-function callAlert(message: string) {
-    const alert = document.getElementById(alertStyles.alert);
-
-    alert!.style.opacity = "0.75";
-    alert!.textContent = message;
-
-    setTimeout(() => {
-        alert!.style.opacity = "0";
-    }, 10000)
 }
 
 async function handleSubmit(e: React.FormEvent) {
@@ -54,18 +40,29 @@ async function handleSubmit(e: React.FormEvent) {
     const result = (await response.json()) as AuthenticationResponse;
 
     if (result.Successful) {
-        setCookie("Auth", result.Token!);
-        window.location.href = "/dashboard/tests";
+        cookies().set("Auth", result.Token!);
+        redirect("/");
     } else {
         callAlert(result.Error!);
     }
   }
 
+  function callAlert(message: string) {
+    const alert = document.getElementById(alertStyles.alert);
+
+    alert!.style.opacity = "0.75";
+    alert!.textContent = message;
+
+    setTimeout(() => {
+        alert!.style.opacity = "0";
+    }, 10000)
+}
+
 export default function Login() {
 
-    const authCookie = getCookie("Auth");
+    const authCookie = cookies().get("Auth");
     if (authCookie != undefined) {
-        window.location.href = "/dashboard/tests";
+        redirect("/");
     }
 
   return (

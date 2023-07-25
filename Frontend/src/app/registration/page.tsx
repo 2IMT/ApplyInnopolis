@@ -1,5 +1,3 @@
-'use client';
-
 import styles from '../styles/reg_auth_form.module.css'
 import alertStyles from '../styles/alert.module.css'
 
@@ -8,7 +6,8 @@ import Button from '../components/button'
 import Grid from '../components/grid'
 import InputField from '../components/inputField'
 import Alert from '../components/alert'
-import { setCookie, getCookie} from '../cookies-utils';
+import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers'
 
 interface FormElements extends HTMLFormControlsCollection {
     FirstName: HTMLInputElement;
@@ -72,17 +71,17 @@ async function handleSubmit(e: React.FormEvent) {
     const result = (await response.json()) as RegisterResponse;
 
     if (result.Successful) {
-        setCookie("Auth", result.Token!);
-        window.location.href = "/dashboard/tests";
+        cookies().set("Auth", result.Token!);
+        redirect("/");
     } else {
         callAlert(result.Error!);
     }
   }
 
 export default function Register() {
-    const authCookie = getCookie("Auth");
+    const authCookie = cookies().get("Auth");
     if (authCookie != undefined) {
-        window.location.href = "/dashboard/tests";
+        redirect("/");
     }
 
   return (

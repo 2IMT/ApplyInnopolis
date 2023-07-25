@@ -3,11 +3,10 @@
 import '../globals.css'
 import styles from '../styles/exit.module.css'
 import Image from 'next/image'
-import { deleteCookie } from '../cookies-utils';
+import { redirect } from 'next/navigation';
 
 function exit() {
-  deleteCookie("Auth");
-  window.location.href = "/login";
+  redirect("/logout")
 }
 
 export default function Exit({username, userId}:{
