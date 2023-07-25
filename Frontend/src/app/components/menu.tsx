@@ -36,13 +36,13 @@ export default function Menu() {
             </div>
             <section className={styles.main_box}>
                 <ul className={styles.box_menu}>
-                    <MenuItem isActive={pathname === "/dashboard/tests" || pathname === "/dashboard/test" ? true : false} name="TESTS" link="/"/>
+                    <MenuItem isActive={pathname === "/dashboard/tests" || pathname === "/dashboard/test" ? true : false} name="TESTS" link="/dashboard/tests"/>
 
-                    <MenuItem isActive={pathname === "/dashboard/application" ? true : false} name="APPLICATION" link="/application"/>
+                    <MenuItem isActive={pathname === "/dashboard/application" ? true : false} name="APPLICATION" link="/dashboard/application"/>
 
-                    <MenuItem isActive={pathname === "/dashboard/admission-documents" ? true : false} name="ADMISSION DOCUMENTS" link="/admission-documents"/>
+                    <MenuItem isActive={pathname === "/dashboard/admission-documents" ? true : false} name="ADMISSION DOCUMENTS" link="/dashboard/admission-documents"/>
 
-                    <MenuItem isActive={pathname === "/dashboard/settings" ? true : false} name="SETTINGS" link="/settings"/>
+                    <MenuItem isActive={pathname === "/dashboard/settings" ? true : false} name="SETTINGS" link="/dashboard/settings"/>
                 </ul>
             </section>
             <Card centred={true} sep={false} heading="NOTIFICATIONS:" body={

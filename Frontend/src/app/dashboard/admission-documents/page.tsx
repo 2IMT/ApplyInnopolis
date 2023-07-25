@@ -1,6 +1,6 @@
-import Card from "../components/card"
-import Button from "../components/button"
-import TextArea from "../components/textArea"
+import Card from "../../components/card"
+import Button from "../../components/button"
+import TextArea from "../../components/textArea"
 
 export default function AdmissionDocuments() {
     return (
