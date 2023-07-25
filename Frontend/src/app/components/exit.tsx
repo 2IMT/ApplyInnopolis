@@ -1,15 +1,26 @@
+'use client';
+
 import '../globals.css'
 import styles from '../styles/exit.module.css'
 import Image from 'next/image'
+import { deleteCookie } from '../cookies-utils';
 
-export default function Exit() {
+function exit() {
+  deleteCookie("Auth");
+  window.location.href = "/login";
+}
+
+export default function Exit({username, userId}:{
+  username: string,
+  userId: string
+}) {
   return (
-    <div id={styles.login}>
+    <div id={styles.login} onClick={exit}>
         <div className={styles.login_text} id={styles.login_text}>
             <div id={styles.name_id}>
-            Artem Burmyakov
+            {username}
             <br></br>
-            <span className={styles.font_middle}>ID:141141</span>
+            <span className={styles.font_middle}>ID:{userId}</span>
             </div>
             <div className={styles.log_out} id={styles.log_out}>Log out</div>
         </div>

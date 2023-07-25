@@ -1,0 +1,10 @@
+.reg_auth_form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .reg_auth_form {
+        width: 95%;
+    }
+}
