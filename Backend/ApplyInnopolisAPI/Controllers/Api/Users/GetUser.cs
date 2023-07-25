@@ -40,9 +40,9 @@ public class GetUser : Controller
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(":hF@P:H:j5wpiwLC@~T@U!HECuF_pnhn=deT%+,t82e4cLn2=WJa_9R>=Q}_"))
                 }, out SecurityToken validatedToken);
             }
-            catch
+            catch (Exception e)
             {
-                throw new Exception("Auth token is invalid");
+                throw new Exception("Auth token is invalid " + e.Message);
             }
         
             var jwt = tokenHandler.ReadToken(token) as JwtSecurityToken;
