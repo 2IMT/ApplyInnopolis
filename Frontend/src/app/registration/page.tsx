@@ -1,4 +1,4 @@
-'use-client';
+'use client'
 
 import styles from '../styles/reg_auth_form.module.css'
 import alertStyles from '../styles/alert.module.css'
@@ -107,14 +107,4 @@ export default function Register() {
         <Alert/>
     </main>
   )
-}
-
-Register.GetLayout = function GetLayout({children}: {children: React.ReactNode}) {
-    return (
-        <html lang="en">
-        <body>
-          {children}
-        </body>
-      </html>
-    );
 }
