@@ -48,6 +48,8 @@ export default async function DashboardLayout({
 
     const result = (await response.json()) as GetUserResponse;
 
+    console.log(result)
+
     if (result.Error = undefined) {
       redirect("/login")
     }
