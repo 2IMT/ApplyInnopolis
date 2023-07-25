@@ -7,6 +7,13 @@ import Menu from './components/menu'
 export const metadata: Metadata = {
   title: 'Apply Innopolis: Tests',
   description: '',
+  metadataBase: new URL('https://cybertoad.ru'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US'
+    }
+  }
 }
 
 export default function RootLayout({
