@@ -4,8 +4,8 @@ import './globals.css'
 
 export const alt = 'Apply Innopolis'
 export const size = {
-  width: 240,
-  height: 72,
+  width: 1200,
+  height: 630,
 }
  
 export const contentType = 'image/png'
