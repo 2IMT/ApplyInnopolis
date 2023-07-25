@@ -44,7 +44,7 @@ public class GetUser : Controller
             }
             catch (Exception e)
             {
-                throw new Exception("Auth token is invalid " + e.Message);
+                throw new Exception("Auth token is invalid " + e.Message + " " + token);
             }
         
             var jwt = tokenHandler.ReadToken(token) as JwtSecurityToken;
