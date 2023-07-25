@@ -1,84 +1,94 @@
-'use client';
-
 import Card from '../../components/card'
+import FormWithHandler from './formWithHandler';
 import Button from '../../components/button'
 import InputField from '../../components/inputField'
 import Grid from '../../components/grid'
+import {cookies} from 'next/headers'
 
-import React from 'react'
-
-interface FormData {
-  educational_program: string;
-  first_name: string;
-  last_name: string;
-  patronymic: string;
-  birthday: string;
-  email: string;
-  number: string;
-  where_did_you_hear: string;
-  country: string;
-  city: string;
-  citizenship: string;
+type GetUserResponse = {
+  Id: string;
+  FirstName: string;
+  LastName: string;
+  Patronymic: string;
+  BirthDate: string;
+  Email: string;
+  ContactPhone: string;
+  Country: string;
+  City: string;
+  Citizenship: string;
+  Source: string;
+  Error: string | undefined;
 }
 
 function handleSubmit(e: React.FormEvent) {
   e.preventDefault();
 
   const target = e.target as unknown as FormData;
-  console.log(target.educational_program)
 }
 
-export default function Application() {
+export default async function Application() {
+  const authCookie = cookies().get("Auth")!;
+  
+  const response = await fetch('https://cybertoad.ru/api/users/getUser', {
+        cache: "no-cache",
+        method: 'GET',
+        headers: {
+            "Auth": authCookie!.value,
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+    });
+
+    const result = (await response.json()) as GetUserResponse;
+    console.log(result);
+
   return (
     <main>
       <Card heading="Personal Data" body={
-        <form onSubmit={handleSubmit} method="post">
-          <InputField labelName="Educational Program"
-            inputName="educational_program" />
-
+        <FormWithHandler token={authCookie.value}>
           <Grid columns={2}>
             <InputField labelName="First Name"
-              inputName="first_name" />
+              inputName="first_name" value={result.FirstName} />
 
             <InputField labelName="Last Name"
-              inputName="last_name" />
+              inputName="last_name" value={result.LastName} />
           </Grid>
 
           <InputField labelName="Patronymic (If any)"
-            inputName="patronymic" />
+            inputName="patronymic" value={result.Patronymic} />
 
           <InputField labelName="Date Of Birth"
             inputName="birthday"
-            inputType="date" />
+            inputType="date" value={result.BirthDate} />
 
           <Grid columns={2}>
             <InputField labelName="Email Address"
               inputName="email"
-              inputType="email" />
+              inputType="email" value={result.Email} />
 
             <InputField labelName="Contact Telephone Number"
               inputName="number"
-              inputType="tel" />
+              inputType="tel" value={result.ContactPhone}/>
           </Grid>
 
           <InputField labelName="Where Did You Hear About Us?"
-            inputName="where_did_you_hear" />
+            inputName="where_did_you_hear" value={result.Source} />
 
           <Grid columns={2}>
             <InputField labelName="Country Where You Live"
-              inputName="country" />
+              inputName="country"  value={result.Country}/>
 
             <InputField labelName="City"
-              inputName="city" />
+              inputName="city"  value={result.City}/>
           </Grid>
 
           <InputField labelName="Citizenship"
-            inputName="citizenship" />
+            inputName="citizenship"  value={result.Citizenship}/>
 
           <br />
 
           <Button text="SUBMIT" inputType="submit"></Button>
-        </form>
+        </FormWithHandler>
       } />
     </main>
   )

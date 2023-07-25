@@ -31,17 +31,16 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode,
 }) {
-    const authCookie = cookies().get("Auth")!.value;
+    const authCookie = cookies().get("Auth")!;
     if (authCookie == undefined) {
       redirect("/login")
     }
-    console.log(authCookie);
 
     const response = await fetch('https://cybertoad.ru/api/users/getUser', {
         cache: "no-cache",
         method: 'GET',
         headers: {
-            "Auth": authCookie!,
+            "Auth": authCookie!.value,
             'Content-Type': 'application/json',
             Accept: 'application/json',
         },
@@ -49,7 +48,6 @@ export default async function DashboardLayout({
 
     const result = (await response.json()) as GetUserResponse;
 
-    console.log(result)
 
     if (result.Error = undefined) {
       redirect("/login")
