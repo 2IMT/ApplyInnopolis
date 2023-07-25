@@ -1,9 +1,9 @@
 'use client';
 
-import Card from '../components/card'
-import Button from '../components/button'
-import InputField from '../components/inputField'
-import Grid from '../components/grid'
+import Card from '../../components/card'
+import Button from '../../components/button'
+import InputField from '../../components/inputField'
+import Grid from '../../components/grid'
 
 import React from 'react'
 
@@ -25,6 +25,7 @@ function handleSubmit(e: React.FormEvent) {
   e.preventDefault();
 
   const target = e.target as unknown as FormData;
+  console.log(target.educational_program)
 }
 
 export default function Application() {

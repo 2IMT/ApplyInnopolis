@@ -1,0 +1,13 @@
+#alert {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: 0.8s ease;
+    padding: 20px 40px;
+    background-color: #c2281d;
+    border-color: #ab2218;
+    color: white;
+    opacity: 0;
+    border-radius: 8px;
+    border: 2px solid;
+}

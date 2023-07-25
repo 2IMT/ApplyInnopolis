@@ -1,6 +1,6 @@
-import Card from '../components/card'
-import Button from '../components/button'
-import InputField from '../components/inputField'
+import Card from '../../components/card'
+import Button from '../../components/button'
+import InputField from '../../components/inputField'
 
 interface FetchedQuestion {
     Id: number;

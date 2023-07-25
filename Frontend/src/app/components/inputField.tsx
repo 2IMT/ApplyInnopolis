@@ -8,6 +8,7 @@ export interface InputFieldProps {
     labelName: string;
     inputName: string;
     inputPlaceholder?: string;
+    isRequired?: boolean;
     inputType?: string;
 }
 
@@ -16,7 +17,7 @@ export default class InputField extends React.Component<InputFieldProps, {}> {
     inputName: string;
     inputPlaceholder: string;
     inputType: string;
-
+    isRequired?: boolean = false;
     value: string;
 
     constructor(props: InputFieldProps) {
@@ -43,7 +44,7 @@ export default class InputField extends React.Component<InputFieldProps, {}> {
         return (
             <div className={styles.inputField}>
                 <label>{this.labelName}</label>
-                <input type={this.inputType} name={this.inputName} placeholder={this.inputPlaceholder} onChange={e => this.setValue(e.currentTarget.value)}/>
+                <input required={this.isRequired} type={this.inputType} name={this.inputName} placeholder={this.inputPlaceholder} onChange={e => this.setValue(e.currentTarget.value)}/>
             </div>
         )
     }
