@@ -31,10 +31,11 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode,
 }) {
-    const authCookie = cookies().get("Auth") as string | undefined;
+    const authCookie = cookies().get("Auth")!.value;
     if (authCookie == undefined) {
       redirect("/login")
     }
+    console.log(authCookie);
 
     const response = await fetch('https://cybertoad.ru/api/users/getUser', {
         cache: "no-cache",
